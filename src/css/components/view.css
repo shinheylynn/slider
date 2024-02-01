@@ -14,7 +14,7 @@
   border: 1px solid black;
   width: var(--slider-width);
   min-width: var(--slider-min-width);
-  height: 240px;
+  height: var(--slider-height);
 }
 
 .view__btn {
