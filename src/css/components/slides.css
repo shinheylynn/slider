@@ -1,0 +1,21 @@
+.slides {
+  position: absolute;
+  z-index: 1;
+  height: 240px;
+  width: var(--slider-width);
+  min-width: var(--slider-min-width);
+  transition: 300ms all ease-in;
+  display: flex;
+}
+
+.slides__item {
+  position: absolute;
+  width: 100%;
+}
+
+.slides__item img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+}

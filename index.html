@@ -1,12 +1,75 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="src/css/styles.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Slider</title>
   </head>
   <body>
-    <script src="./index.js"></script>
+    <main id="slider">
+      <div class="view__btn-container">
+        <button class="view__btn prev">
+          <i class="fa-solid fa-arrow-left" style="color: white"></i>
+        </button>
+        <button class="view__btn next">
+          <i class="fa-solid fa-arrow-right" style="color: white"></i>
+        </button>
+      </div>
+
+      <div class="slides">
+        <div class="slides__item">
+          <img src="public/img/red.png" alt="image1" />
+        </div>
+        <div class="slides__item">
+          <img src="public/img/orange.png" alt="image2" />
+        </div>
+        <div class="slides__item">
+          <img src="public/img/yellow.jpeg" alt="image3" />
+        </div>
+        <div class="slides__item">
+          <img src="public/img/green.png" alt="image4" />
+        </div>
+        <div class="slides__item">
+          <img src="public/img/blue.png" alt="image5" />
+        </div>
+        <div class="slides__item">
+          <img src="public/img/navy.png" alt="image6" />
+        </div>
+        <div class="slides__item">
+          <img src="public/img/purple.png" alt="image7" />
+        </div>
+      </div>
+    </main>
+
+    <div id="slider-indicators">
+      <div class="indicators-container">
+        <div class="indicators">
+          <button class="indicator"></button>
+          <button class="indicator"></button>
+          <button class="indicator"></button>
+          <button class="indicator"></button>
+          <button class="indicator"></button>
+          <button class="indicator"></button>
+          <button class="indicator"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="slider-autoplay">
+      <div class="autoplay-btn__containter">
+        <button class="autoplay-btn">
+          <i class="fa-solid fa-pause"></i>
+          <!-- <i class="fa-solid fa-play"></i> -->
+        </button>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/21abba9a24.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

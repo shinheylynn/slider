@@ -1,0 +1,30 @@
+#slider-autoplay {
+  display: flex;
+  margin-left: 400px;
+  width: 100px;
+  position: absolute;
+  top: var(--top-from-slider);
+  z-index: 3;
+}
+
+.autoplay-btn__containter {
+  margin-left: auto;
+  display: flex;
+}
+
+.autoplay-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.fa-pause,
+.fa-play {
+  color: white;
+  opacity: 90%;
+  font-size: 15px;
+}
+
+.fa-pause:hover,
+.fa-play:hover {
+  cursor: pointer;
+}

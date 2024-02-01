@@ -1,0 +1,40 @@
+#slider-indicators {
+  display: flex;
+  min-width: var(--slider-min-width);
+  position: absolute;
+  top: var(--top-from-slider);
+  z-index: 3;
+}
+
+.indicators-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  width: 20%;
+}
+
+.indicators {
+  display: flex;
+  justify-content: space-between;
+}
+
+.indicator {
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 3px;
+  background-color: lightgoldenrodyellow;
+  opacity: 30%;
+}
+
+.indicator:hover {
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  opacity: 90%;
+}
+
+.autoplay-btn {
+  margin-left: auto;
+}
