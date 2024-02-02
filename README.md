@@ -1,5 +1,7 @@
 # slider
 
+https://github.com/shinheylynn/slider/assets/84219519/73959441-cbce-4777-9bc3-b86d5e90ed27
+
 ### 💎 **기본 구현**
 
 - [x] 유저는 이미지 슬라이드를 확인할 수 있다.
