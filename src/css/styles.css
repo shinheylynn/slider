@@ -6,10 +6,6 @@
 @import "./components/autoplay.css";
 @import "./components/slides.css";
 
-/* * {
-  box-sizing: border-box;
-} */
-
 body {
   display: flex;
   justify-content: center;

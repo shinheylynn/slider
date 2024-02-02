@@ -1,38 +1,57 @@
-
-  const slides = document.querySelectorAll('.slides__item');
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.slides-container img');
+  const prevBtn = document.querySelector('.view__btn.prev');
+  const nextBtn = document.querySelector('.view__btn.next');
   const indicators = document.querySelectorAll('.indicator');
-  const prevButton = document.querySelector('.prev');
-  const nextButton = document.querySelector('.next');
+  const autoplayBtn = document.querySelector('.autoplay-btn');
+  let currentIndex = 0;
+  let autoplay = false;
+  let interval;
 
-  let currentSlide = 0; // 현재 슬라이드의 인덱스를 추적합니다.
-
-  // 슬라이드를 보여주는 함수
-  function showSlide(index) {
-      slides.forEach((slide, i) => {
-          slide.style.display = i === index ? 'block' : 'none';
+  function updateSlide(position) {
+      slides.forEach((slide, index) => {
+          slide.style.transform = `translateX(${100 * (index - position)}%)`;
       });
-      currentSlide = index;
+      updateIndicators(position);
   }
 
-  // 인디케이터 클릭 이벤트를 처리합니다.
-  indicators.forEach((indicator, i) => {
-      indicator.addEventListener('click', () => {
-          showSlide(i);
+  function updateIndicators(position) {
+      indicators.forEach((indicator, index) => {
+          indicator.classList.toggle('active', index === position);
       });
+  }
+
+  function goToSlide(slideIndex) {
+      currentIndex = (slideIndex + slides.length) % slides.length;
+      updateSlide(currentIndex);
+  }
+
+  function prevSlide() {
+      goToSlide(currentIndex - 1);
+  }
+
+  function nextSlide() {
+      goToSlide(currentIndex + 1);
+  }
+
+  function toggleAutoplay() {
+      autoplay = !autoplay;
+      if (autoplay) {
+          autoplayBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+          interval = setInterval(nextSlide, 2000);
+      } else {
+          autoplayBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+          clearInterval(interval);
+      }
+  }
+
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+  autoplayBtn.addEventListener('click', toggleAutoplay);
+
+  indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => goToSlide(index));
   });
 
-  // 'prev' 버튼 클릭 이벤트를 처리합니다.
-  prevButton.addEventListener('click', () => {
-      let newIndex = currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1;
-      showSlide(newIndex);
-  });
-
-  // 'next' 버튼 클릭 이벤트를 처리합니다.
-  nextButton.addEventListener('click', () => {
-      let newIndex = currentSlide + 1 >= slides.length ? 0 : currentSlide + 1;
-      showSlide(newIndex);
-  });
-
-  // 초기 슬라이드를 설정합니다.
-  showSlide(0);
-
+  updateSlide(currentIndex);
+});
